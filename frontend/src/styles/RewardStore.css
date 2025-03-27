@@ -1,0 +1,691 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Montserrat:wght@800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.reward-container {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #5cb85c 0%, #4cae4c 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background elements */
+.background-elements {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(134, 239, 134, 0.2);
+}
+
+.circle-1 {
+  top: 20px;
+  left: 20px;
+  width: 64px;
+  height: 64px;
+}
+
+.circle-2 {
+  top: 40px;
+  left: 40px;
+  width: 96px;
+  height: 96px;
+}
+
+.green-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.green-circle-1 {
+  top: -20px;
+  left: -20px;
+  width: 64px;
+  height: 64px;
+}
+
+.green-circle-2 {
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+/* Left decoration */
+.left-decoration {
+  position: absolute;
+  left: 8px;
+  top: 25%;
+  bottom: 25%;
+  width: 8px;
+}
+
+.left-decoration .vertical-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: black;
+}
+
+.left-decoration .top-lines {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 64px;
+}
+
+.left-decoration .bottom-lines {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 8px;
+  height: 64px;
+}
+
+.horizontal-line {
+  height: 1px;
+  width: 8px;
+  background: black;
+  margin-bottom: 1px;
+}
+
+.left-decoration .dot {
+  position: absolute;
+  left: 0;
+  top: 25%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: black;
+}
+
+/* Right decoration */
+.right-decoration {
+  position: absolute;
+  right: 8px;
+  top: 25%;
+  bottom: 25%;
+  width: 8px;
+}
+
+.right-decoration .vertical-line {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: black;
+}
+
+.right-decoration .top-lines {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8px;
+  height: 64px;
+}
+
+.right-decoration .bottom-lines {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  height: 64px;
+}
+
+.chevron-container {
+  position: absolute;
+  right: 8px;
+  bottom: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chevron-down {
+  width: 32px;
+  height: 32px;
+}
+
+.chevron-down svg {
+  width: 100%;
+  height: 100%;
+  fill: black;
+}
+
+/* Header */
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(134, 239, 134, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(134, 239, 134, 0.5);
+}
+
+.logo-icon {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 32px;
+  height: 32px;
+}
+
+.logo-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: rgba(134, 239, 134, 0.8);
+}
+
+.about-button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.about-button span {
+  color: black;
+  font-weight: 500;
+}
+
+/* Main content */
+.main-content {
+  position: relative;
+  z-index: 10;
+  padding: 16px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.title-highlight {
+  color: #facc15;
+}
+
+.subtitle {
+  font-size: 30px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 8px;
+}
+
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+  align-content: center;
+}
+
+.card {
+  position: relative;
+  background: rgba(76, 175, 80, 0.2);
+  border-radius: 24px;
+  padding: 16px;
+  border: 2px solid rgba(134, 239, 134, 0.3);
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  height: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  background: rgba(134, 239, 134, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card 1 - Basket */
+.basket-icon {
+  width: 80px;
+  height: 80px;
+  fill: #9c27b0;
+}
+
+/* Card 2 - Burger */
+.burger-icon {
+  width: 80px;
+  height: 80px;
+  fill: #f0ad4e;
+}
+
+.notification-badge {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  width: 24px;
+  height: 24px;
+  background: #e74c3c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* Card 3 - Tickets */
+.ticket {
+  width: 96px;
+  height: 64px;
+  background: #90caf9;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-back {
+  transform: rotate(12deg);
+}
+
+.ticket-front {
+  position: absolute;
+  transform: rotate(-12deg);
+}
+
+.ticket-stripe {
+  width: 80px;
+  height: 12px;
+  background: #2196f3;
+}
+
+/* Card 4 - Recycling */
+.recycle-bin {
+  width: 80px;
+  height: 96px;
+  background: #26c6da;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recycle-icon {
+  width: 48px;
+  height: 48px;
+  fill: white;
+}
+
+.bottle {
+  position: absolute;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.bottle-white {
+  top: 8px;
+  right: 16px;
+  width: 24px;
+  height: 40px;
+  background: white;
+}
+
+.bottle-green {
+  top: 0;
+  left: 16px;
+  width: 16px;
+  height: 32px;
+  background: #388e3c;
+}
+
+.price-tag {
+  background: rgba(134, 239, 134, 0.7);
+  border-radius: 8px;
+  padding: 8px 16px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.price-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Next button */
+.next-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+
+.next-button {
+  background: rgba(134, 239, 134, 0.7);
+  color: #333;
+  font-weight: bold;
+  padding: 12px 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.next-button:hover {
+  background: rgba(134, 239, 134, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  fill: currentColor;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 10;
+  padding: 0 32px 16px 32px;
+  flex-shrink: 0;
+}
+
+.people-illustration {
+  position: absolute;
+  bottom: 64px;
+  left: 64px;
+  width: 128px;
+  height: 128px;
+  position: relative;
+}
+
+.person {
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+.person-1 {
+  left: 0;
+  width: 48px;
+  height: 64px;
+  background: #e74c3c;
+}
+
+.person-2 {
+  left: 40px;
+  width: 48px;
+  height: 80px;
+  background: #3498db;
+}
+
+.cart {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  width: 80px;
+  height: 32px;
+  background: #95a5a6;
+  border-radius: 4px;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 64px;
+}
+
+.left-bar,
+.right-bar {
+  display: flex;
+  align-items: center;
+}
+
+.dot-large {
+  width: 16px;
+  height: 16px;
+  background: black;
+  border-radius: 50%;
+}
+
+.line {
+  height: 1px;
+  background: black;
+  margin: 0 16px;
+}
+
+.left-bar .line {
+  width: 256px;
+}
+
+.right-bar .line {
+  width: 64px;
+}
+
+.chevron-group {
+  display: flex;
+}
+
+.chevron-right,
+.chevron-left {
+  width: 24px;
+  height: 24px;
+}
+
+.chevron-left {
+  transform: rotate(180deg);
+}
+
+.chevron-right svg,
+.chevron-left svg {
+  width: 100%;
+  height: 100%;
+  fill: black;
+}
+
+.recycling-message {
+  text-align: center;
+  color: black;
+  font-weight: 500;
+}
+
+.recycling-message .highlight {
+  color: #388e3c;
+}
+
+.points-display {
+  position: absolute;
+  bottom: 64px;
+  right: 64px;
+  text-align: right;
+}
+
+.points-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: black;
+}
+
+.points-label {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-bar {
+    padding: 0 32px;
+  }
+
+  .left-bar .line,
+  .right-bar .line {
+    width: 100px;
+  }
+
+  .chevron-group {
+    display: none;
+  }
+
+  .recycling-message {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .bottom-bar {
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 16px;
+  }
+
+  .left-bar,
+  .right-bar {
+    display: none;
+  }
+
+  .recycling-message {
+    margin-bottom: 16px;
+  }
+
+  .points-display {
+    position: static;
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  .header {
+    padding: 16px;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .price-text {
+    font-size: 18px;
+  }
+
+  .next-button {
+    padding: 10px 24px;
+  }
+}
+

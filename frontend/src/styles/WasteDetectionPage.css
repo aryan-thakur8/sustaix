@@ -1,0 +1,210 @@
+.waste-detection-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #4caf50;
+    background-image: radial-gradient(circle at 10% 20%, #5dc264 0%, #4caf50 90%);
+    padding: 20px;
+    position: relative;
+  }
+  
+  .waste-detection-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .waste-detection-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .camera-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+  }
+  
+  .camera-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+  }
+  
+  .camera-feed.dimmed {
+    filter: brightness(0.3);
+  }
+  
+  .camera-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .processing-overlay,
+  .result-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  .processing-overlay h2,
+  .result-overlay h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .processing-overlay p {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  
+  /* Spinner animation */
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Result styling */
+  .result-icon {
+    font-size: 4rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  .result-icon.plastic {
+    background-color: rgba(33, 150, 243, 0.7);
+  }
+  
+  .result-icon.biodegradable {
+    background-color: rgba(76, 175, 80, 0.7);
+  }
+  
+  .result-icon.metallic {
+    background-color: rgba(158, 158, 158, 0.7);
+  }
+  
+  .result-icon.unknown {
+    background-color: rgba(244, 67, 54, 0.7);
+  }
+  
+  .result-details {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+  }
+  
+  .result-details p {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+  }
+  
+  .result-details span {
+    font-weight: bold;
+  }
+  
+  .result-type span {
+    color: #64b5f6;
+  }
+  
+  .result-confidence span {
+    color: #81c784;
+  }
+  
+  .result-points span {
+    color: #ffb74d;
+  }
+  
+  .return-button {
+    background-color: white;
+    color: #4caf50;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .return-button:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .waste-detection-title {
+      font-size: 2rem;
+    }
+  
+    .camera-container {
+      height: 300px;
+    }
+  
+    .result-icon {
+      font-size: 3rem;
+      width: 80px;
+      height: 80px;
+    }
+  
+    .result-details {
+      width: 90%;
+    }
+  }
+  
+  
